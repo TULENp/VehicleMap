@@ -1,0 +1,132 @@
+[
+    {
+        "id": 1,
+        "name": "ТС #1",
+        "category": "Грузовой",
+        "driver": {
+            "name": "Иван Иванов",
+            "number": "1234567890"
+        },
+        "location": {
+            "latitude": 55.796127,
+            "longitude": 49.101419
+        }
+    },
+    {
+        "id": 2,
+        "name": "ТС #2",
+        "category": "Пассажирский",
+        "driver": {
+            "name": "Петр Петров",
+            "number": "0987654321"
+        },
+        "location": {
+            "latitude": 55.796341,
+            "longitude": 49.116960
+        }
+    },
+    {
+        "id": 3,
+        "name": "ТС #3",
+        "category": "Спецтранспорт",
+        "driver": {
+            "name": "Алексей Смирнов",
+            "number": "5678901234"
+        },
+        "location": {
+            "latitude": 55.791557,
+            "longitude": 49.102563
+        }
+    },
+    {
+        "id": 4,
+        "name": "ТС #4",
+        "category": "Грузовой",
+        "driver": {
+            "name": "Елена Ковалева",
+            "number": "4321098765"
+        },
+        "location": {
+            "latitude": 55.796758,
+            "longitude": 49.128248
+        }
+    },
+    {
+        "id": 5,
+        "name": "ТС #5",
+        "category": "Пассажирский",
+        "driver": {
+            "name": "Михаил Новиков",
+            "number": "6789012345"
+        },
+        "location": {
+            "latitude": 55.791973,
+            "longitude": 49.121810
+        }
+    },
+    {
+        "id": 6,
+        "name": "ТС #6",
+        "category": "Спецтранспорт",
+        "driver": {
+            "name": "Ольга Козлова",
+            "number": "5432109876"
+        },
+        "location": {
+            "latitude": 55.787189,
+            "longitude": 49.109427
+        }
+    },
+    {
+        "id": 7,
+        "name": "ТС #7",
+        "category": "Грузовой",
+        "driver": {
+            "name": "Андрей Иванов",
+            "number": "9876543210"
+        },
+        "location": {
+            "latitude": 55.777428,
+            "longitude": 49.109995
+        }
+    },
+    {
+        "id": 8,
+        "name": "ТС #8",
+        "category": "Пассажирский",
+        "driver": {
+            "name": "Екатерина Смирнова",
+            "number": "2345678901"
+        },
+        "location": {
+            "latitude": 55.792638,
+            "longitude": 49.110613
+        }
+    },
+    {
+        "id": 9,
+        "name": "ТС #9",
+        "category": "Спецтранспорт",
+        "driver": {
+            "name": "Дмитрий Ковалев",
+            "number": "8765432109"
+        },
+        "location": {
+            "latitude": 55.787864,
+            "longitude": 49.121202
+        }
+    },
+    {
+        "id": 10,
+        "name": "ТС #10",
+        "category": "Грузовой",
+        "driver": {
+            "name": "Светлана Новикова",
+            "number": "0192837465"
+        },
+        "location": {
+            "latitude": 55.798086,
+            "longitude": 49.111809
+        }
+    }
+]

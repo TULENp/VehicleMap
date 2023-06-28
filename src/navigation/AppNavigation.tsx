@@ -4,8 +4,8 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Main } from '../screens/Main';
 import { TAppNavigation } from '../types';
-import Vehicle from '../screens/Vehicle';
-import Settings from '../screens/Settings';
+import { Vehicle } from '../screens/Vehicle';
+import { Settings } from '../screens/Settings';
 
 const Stack = createNativeStackNavigator<TAppNavigation>();
 
