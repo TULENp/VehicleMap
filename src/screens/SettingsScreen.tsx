@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export function Vehicle() {
+export function SettingsScreen() {
     return (
         <View>
-            <Text>Vehicle</Text>
+            <Text>Settings</Text>
         </View>
     )
 }

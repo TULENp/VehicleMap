@@ -1,13 +1,22 @@
 
 export type TAppNavigation = {
     Main: undefined,
-    Vehicle: undefined,
+    Vehicle: { vehicle: TVehicle },
     Settings: undefined
+}
+
+export type TTabNavigation = {
+    Map: { vehicles: TVehicle[] },
+    List: { vehicles: TVehicle[] },
+}
+
+export type TRoute = {
+    key: 'list' | 'map',
+    title: string
 }
 
 export type TVehicle = {
     id: number,
-    name: string,
     category: string,
     driver: {
         name: string,
