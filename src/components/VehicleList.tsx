@@ -1,9 +1,8 @@
-import { View, Text, FlatList, Pressable, StyleSheet } from 'react-native'
+import { FlatList, Pressable, StyleSheet } from 'react-native'
 import React from 'react'
-import { Marker } from 'react-native-maps';
-import { TAppNavigation, TTabNavigation, TVehicle } from '../types';
+import { TAppNavigation, TVehicle } from '../types';
 import { VehicleCard } from './VehicleCard';
-import { useNavigation, NavigationProp, RouteProp, useRoute } from '@react-navigation/native';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
 
 export function VehicleList({ vehicles }: { vehicles: TVehicle[] }) {
     const { navigate } = useNavigation<NavigationProp<TAppNavigation>>();
