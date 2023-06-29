@@ -8,15 +8,6 @@ import { useNavigation, NavigationProp, RouteProp, useRoute } from '@react-navig
 export function VehicleList({ vehicles }: { vehicles: TVehicle[] }) {
     const { navigate } = useNavigation<NavigationProp<TAppNavigation>>();
 
-    const vehiclesMarkers: JSX.Element[] = vehicles.map((item: TVehicle) =>
-        <Marker
-            key={item.id}
-            coordinate={{
-                latitude: item.location.latitude,
-                longitude: item.location.longitude
-            }} />
-    );
-
     return (
         <FlatList
             style={styles.listContainer}

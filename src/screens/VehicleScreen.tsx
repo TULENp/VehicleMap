@@ -5,6 +5,7 @@ import { TAppNavigation, TVehicle } from '../types';
 import MapView, { Marker } from 'react-native-maps';
 import { initLocation } from '../constants/Location';
 import { globalStyles } from '../styles';
+import { setCategoryColor } from '../services';
 
 
 export function VehicleScreen() {
@@ -16,6 +17,7 @@ export function VehicleScreen() {
                 initialRegion={initLocation}
                 style={{ width: '100%', height: '80%' }}>
                 <Marker
+                    pinColor={setCategoryColor(category)}
                     coordinate={{
                         latitude: location.latitude,
                         longitude: location.longitude
