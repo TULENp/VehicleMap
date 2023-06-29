@@ -8,7 +8,7 @@ import { TabView } from 'react-native-tab-view';
 import { Filters } from '../components/Filters';
 import { setCategory } from '../services';
 
-// display vehicles map and list
+//* display vehicles map and list
 export function MainScreen() {
 
     const [vehiclesArray, setVehiclesArray] = useState<TVehicle[]>(vehicles); // array of vehicles

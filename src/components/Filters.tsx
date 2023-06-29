@@ -12,6 +12,7 @@ export function Filters({ selectedCategories, setSelectedCategories, submit }: F
     //TODO add markers icon
     return (
         <View>
+            <Text>Фильтры</Text>
             <ButtonGroup
                 buttons={['Грузовой', 'Пассажирский', 'Спецтранспорт']}
                 selectMultiple

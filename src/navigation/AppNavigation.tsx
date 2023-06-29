@@ -14,7 +14,7 @@ export function AppNavigation() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name='Main' component={MainScreen} />
-                <Stack.Screen name='Vehicle' component={VehicleScreen} />
+                <Stack.Screen name='Vehicle' component={VehicleScreen} options={{ title: 'ТС' }} />
                 <Stack.Screen name='Settings' component={SettingsScreen} />
             </Stack.Navigator>
         </NavigationContainer>
