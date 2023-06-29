@@ -1,6 +1,6 @@
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 import React, { SetStateAction, useState } from 'react'
-import { Button, ButtonGroup } from '@rneui/themed';
+import { ButtonGroup } from '@rneui/themed';
 
 type FiltersProps = {
     selectedCategories: number[],
@@ -9,7 +9,7 @@ type FiltersProps = {
 }
 
 export function Filters({ selectedCategories, setSelectedCategories, submit }: FiltersProps) {
-
+    //TODO add markers icon
     return (
         <View>
             <ButtonGroup
@@ -21,9 +21,7 @@ export function Filters({ selectedCategories, setSelectedCategories, submit }: F
                 }}
                 containerStyle={{ marginBottom: 20 }}
             />
-            <Button onPress={submit}>
-                <Text>Применить</Text>
-            </Button>
+            <Button title='Применить' onPress={submit} />
         </View>
     )
 }

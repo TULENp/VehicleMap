@@ -4,7 +4,7 @@
         "category": "Грузовой",
         "driver": {
             "name": "Иван Иванов",
-            "number": "1234567890"
+            "number": "+79677313507"
         },
         "location": {
             "latitude": 55.796127,
@@ -16,7 +16,7 @@
         "category": "Пассажирский",
         "driver": {
             "name": "Петр Петров",
-            "number": "0987654321"
+            "number": "+79677313507"
         },
         "location": {
             "latitude": 55.796341,
@@ -28,7 +28,7 @@
         "category": "Спецтранспорт",
         "driver": {
             "name": "Алексей Смирнов",
-            "number": "5678901234"
+            "number": "+79677313507"
         },
         "location": {
             "latitude": 55.791557,
@@ -40,7 +40,7 @@
         "category": "Грузовой",
         "driver": {
             "name": "Елена Ковалева",
-            "number": "4321098765"
+            "number": "+79677313507"
         },
         "location": {
             "latitude": 55.796758,
@@ -52,7 +52,7 @@
         "category": "Пассажирский",
         "driver": {
             "name": "Михаил Новиков",
-            "number": "6789012345"
+            "number": "+79677313507"
         },
         "location": {
             "latitude": 55.791973,
@@ -64,7 +64,7 @@
         "category": "Спецтранспорт",
         "driver": {
             "name": "Ольга Козлова",
-            "number": "5432109876"
+            "number": "+79677313507"
         },
         "location": {
             "latitude": 55.787189,
@@ -76,7 +76,7 @@
         "category": "Грузовой",
         "driver": {
             "name": "Андрей Иванов",
-            "number": "9876543210"
+            "number": "+79677313507"
         },
         "location": {
             "latitude": 55.777428,
@@ -88,7 +88,7 @@
         "category": "Пассажирский",
         "driver": {
             "name": "Екатерина Смирнова",
-            "number": "2345678901"
+            "number": "+79677313507"
         },
         "location": {
             "latitude": 55.792638,
@@ -100,7 +100,7 @@
         "category": "Спецтранспорт",
         "driver": {
             "name": "Дмитрий Ковалев",
-            "number": "8765432109"
+            "number": "+79677313507"
         },
         "location": {
             "latitude": 55.787864,
@@ -112,7 +112,7 @@
         "category": "Грузовой",
         "driver": {
             "name": "Светлана Новикова",
-            "number": "0192837465"
+            "number": "+79677313507"
         },
         "location": {
             "latitude": 55.798086,
