@@ -5,11 +5,12 @@
     "mainHeader": "Vehicle Tracking",
     "settingsHeader": "Settings",
     "vehicleHeader": "Vehicle #",
-    "filters": "filters",
-    "submit": "submit",
-    "call": "call",
-    "chat": "chat",
-    "freight":"freight",
-    "passenger":"passenger",
-    "special": "special"
+    "filters": "Filters",
+    "submit": "Submit",
+    "call": "Call",
+    "chat": "Chat",
+    "freight":"Freight",
+    "passenger":"Passenger",
+    "special": "Special",
+    "emptyList": "List is empty"
 }

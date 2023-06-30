@@ -25,7 +25,7 @@ export function VehicleMap({ vehicles }: { vehicles: TVehicle[] }) {
 
     return (
         <MapView
-            style={{ width: '100%', height: '80%' }}
+            style={{ width: '100%', height: '100%' }}
             initialRegion={initLocation}>
             {vehiclesMarkers}
         </MapView>

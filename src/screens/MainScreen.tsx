@@ -48,7 +48,7 @@ export function MainScreen() {
 
     return (
         <View style={globalStyles.container}>
-            <Button title={t('settingsHeader')} onPress={() => navigate('Settings')} />
+            {/* <Button title={t('settingsHeader')} onPress={() => navigate('Settings')} /> */}
             <Filters selectedCategories={selectedCategories} setSelectedCategories={setSelectedCategories} submit={filter} />
             <TabView
                 tabBarPosition='bottom'

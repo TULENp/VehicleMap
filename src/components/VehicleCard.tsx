@@ -7,14 +7,10 @@ export function VehicleCard({ vehicle }: { vehicle: TVehicle }) {
 
     return (
         <View style={styles.container}>
-            <View style={styles.vehicle}>
-                <Text >TC #{vehicle.id}</Text>
-            </View>
-            <View style={styles.info}>
-                <View>
-                    <Text>{vehicle.driver.name}</Text>
+            <Text style={styles.vehicle} >TC #{vehicle.id}</Text>
+            <View>
+                    <Text style={styles.driverName}>{vehicle.driver.name}</Text>
                     <Text>{vehicle.category}</Text>
-                </View>
             </View>
         </View>
     )
@@ -34,11 +30,14 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        alignContent: 'center'
     },
     vehicle: {
         width: '20%',
-
+        fontSize: 20,
+        alignSelf: 'center',
+    },
+    driverName: {
+        fontSize: 20,
     }
 })
 

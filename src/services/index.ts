@@ -1,13 +1,14 @@
+import { freightColor, passengerColor, specialColor } from "../constants/colors";
 
 // return color depends on category name
 export function setCategoryColor(category: string): string {
     switch (category) {
         case "Спецтранспорт":
-            return 'red';
+            return specialColor;
         case "Грузовой":
-            return 'green';
+            return freightColor;
         case "Пассажирский":
-            return 'yellow';
+            return passengerColor;
     }
     return 'red';
 }
