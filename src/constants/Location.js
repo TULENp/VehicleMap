@@ -1,4 +1,4 @@
-
+// initial location for map
 export const initLocation = {
     latitude: 55.782127,
     longitude: 49.115405,

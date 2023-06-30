@@ -5,6 +5,7 @@ import { VehicleCard } from './VehicleCard';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 
+//* display vehicle list
 export function VehicleList({ vehicles }: { vehicles: TVehicle[] }) {
     const { navigate } = useNavigation<NavigationProp<TAppNavigation>>();
     const { t } = useTranslation(); // translation hook

@@ -17,7 +17,7 @@ const languageDetector = {
 
 i18n
     .use(initReactI18next) // passes i18n down to react-i18next
-    .use(languageDetector)
+    .use(languageDetector) // pass language detector
     .init({
         fallbackLng: 'en-US',
         compatibilityJSON: 'v3',
@@ -29,7 +29,7 @@ i18n
             'ru-RU': {
                 translation: ru
             },
-            // have a initial namespace
+            // initial namespace
             ns: ['translation'],
             defaultNS: 'translation',
             interpolation: {

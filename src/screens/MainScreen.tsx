@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, useWindowDimensions, Image, StatusBar, Pressable } from 'react-native'
+import { View, StyleSheet, Text, useWindowDimensions, Image, Pressable } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { TAppNavigation, TRoute, TVehicle } from '../types';
 import vehicles from '../data/Vehicles.json'; // array of vehicles
@@ -10,9 +10,9 @@ import { setCategory } from '../services';
 import { useTranslation } from "react-i18next";
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { globalStyles } from '../styles';
-import { accent, primary, primaryButton } from '../constants/colors';
+import { primaryButton } from '../constants/colors';
 
-//* display vehicles map, list and filters
+//* display tabs (with vehicles list and map) and filters
 export function MainScreen() {
     const { t } = useTranslation(); // translation hook
     const { setOptions, navigate } = useNavigation<NavigationProp<TAppNavigation>>();
@@ -30,6 +30,7 @@ export function MainScreen() {
             )
         });
     }, [])
+
     // filter vehiclesArray by selected categories
     function filter() {
         const categories: string[] = selectedCategories.map(id => setCategory(id)); // convert numbers to strings
@@ -47,6 +48,7 @@ export function MainScreen() {
         { key: 'map', title: t('mapTab') },
     ]);
 
+    // returns tab bar icon depends on tab bar key
     const getTabBarIcon = (props: any) => {
         const { route } = props
         if (route.key === 'list') {

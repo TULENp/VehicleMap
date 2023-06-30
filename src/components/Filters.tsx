@@ -1,9 +1,8 @@
-import { View, Text, Button, StyleSheet, Pressable } from 'react-native'
-import React, { SetStateAction, useState } from 'react'
+import { View, Text, StyleSheet, Pressable } from 'react-native'
+import React, {  } from 'react'
 import { ButtonGroup } from '@rneui/themed';
 import { useTranslation } from 'react-i18next';
-import { Marker } from 'react-native-maps';
-import { accent, freightColor, passengerColor, primary, primaryButton, secondaryButton, specialColor } from '../constants/colors';
+import { primaryButton } from '../constants/colors';
 import { globalStyles } from '../styles';
 
 type FiltersProps = {
@@ -12,20 +11,11 @@ type FiltersProps = {
     submit: () => void
 }
 
+//* display filters and change filters state
 export function Filters({ selectedCategories, setSelectedCategories, submit }: FiltersProps) {
     //TODO add markers icon
     const { t } = useTranslation(); // translation hook
 
-    function CategoryButton({ text, color }: { text: string, color: string }) {
-        return (
-            <View style={styles.catButton}>
-                <View style={[styles.circle, { backgroundColor: color }]}></View>
-                <Text>
-                    {text}
-                </Text>
-            </View >
-        )
-    };
     return (
         <View style={styles.container}>
             <Text style={{ fontSize: 20 }}>{t('filters')}</Text>

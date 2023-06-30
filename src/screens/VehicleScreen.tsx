@@ -1,8 +1,8 @@
-import { View, Text, Button, StyleSheet, Pressable } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import { View, Text, StyleSheet, Pressable } from 'react-native'
+import React, { useEffect } from 'react'
 import * as Linking from 'expo-linking';
 import { NavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native';
-import { TAppNavigation, TVehicle } from '../types';
+import { TAppNavigation } from '../types';
 import MapView, { Marker } from 'react-native-maps';
 import { globalStyles } from '../styles';
 import { setCategoryColor } from '../services';
@@ -13,10 +13,10 @@ export function VehicleScreen() {
     const { t } = useTranslation(); // translation hook
     const { setOptions } = useNavigation<NavigationProp<TAppNavigation>>();
     const { id, category, driver, location } = useRoute<RouteProp<TAppNavigation, 'Vehicle'>>().params.vehicle; // get vehicle from params
+    // set nav header title
     useEffect(() => {
-        setOptions({ title: `${t('vehicleHeader')}${id}. ${category}` }); // set nav header
+        setOptions({ title: `${t('vehicleHeader')}${id}. ${category}` }); 
     }, [])
-
 
     //text template for chat message
     const chatText = 'Добрый день, подскажите пожалуйста, какой номер заказа у вас сейчас в работе';
@@ -31,7 +31,6 @@ export function VehicleScreen() {
     //(And because with random numbers it would not be possible to test the chat function in Whatsapp)
     const openCallApp = () => Linking.openURL(`tel:${driver.number}`);
     const openWhatsApp = () => Linking.openURL(`http://api.whatsapp.com/send?phone=${driver.number}&text=${chatText}`);
-
 
     return (
         <View style={globalStyles.container}>
@@ -55,13 +54,11 @@ export function VehicleScreen() {
                     <Pressable style={[globalStyles.button, { width: '45%' }]} onPress={openWhatsApp}>
                         <Text style={[globalStyles.button_text, { fontSize: 25 }]}>{t('chat')}</Text>
                     </Pressable>
-
                 </View>
             </View>
         </View >
     )
 }
-
 
 const styles = StyleSheet.create({
     container: {

@@ -1,10 +1,10 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { TVehicle } from '../types'
 import { accent, secondary, secondaryButton } from '../constants/colors'
 
+//* display vehicle card (list item)
 export function VehicleCard({ vehicle }: { vehicle: TVehicle }) {
-
     return (
         <View style={styles.container}>
             <Text style={styles.vehicle} >TC #{vehicle.id}</Text>

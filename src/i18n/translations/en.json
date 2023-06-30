@@ -13,8 +13,5 @@
     "passenger":"Passenger",
     "special": "Special",
     "emptyList": "List is empty",
-    "category": "Category",
-    "driverName": "Name",
-    "driverNumber": "Number"
-    
+    "category": "Category"
 }
