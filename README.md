@@ -44,5 +44,9 @@ npm start
 - Возможность позвонить и написать водителю в Whatsapp
 - Изменение языка в настройках
 
+![map](https://github.com/TULENp/VehicleMap/assets/83094079/4c112567-8aa4-44fb-97bd-d42d6ab7a13d)
+
 ###  Приложение поддерживает русский и английский языки.
+![lng](https://github.com/TULENp/VehicleMap/assets/83094079/59b4c90a-0283-4c2d-b72a-f01e7617a598)
+
 
