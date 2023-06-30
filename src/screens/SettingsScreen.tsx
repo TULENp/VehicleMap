@@ -1,24 +1,39 @@
 
+import React from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
+import { supportedLanguages } from '../i18n/translations/supportedLanguages';
 
-//FIXME ts errors
+
 export function SettingsScreen() {
-    const { t, i18n } = useTranslation();
-    // Supported Languages List
-    const { supportedLngs } = i18n.services.resourceStore.data;
-    console.log(t('listTab'));
+    const { i18n } = useTranslation();
+
+    //change language
+    const changeLanguage = (code: string) => {
+        i18n.changeLanguage(code);
+    };
 
     return (
-        <View>
-            <FlatList data={supportedLngs} renderItem={({ item }) => (
-
-                <TouchableOpacity onPress={() => i18n.changeLanguage(item.code)}>
-                    <Text>{item.locale}</Text>
-                </TouchableOpacity>
-
-            )} />
+        <View style={styles.container}>
+            <FlatList
+                data={supportedLanguages}
+                renderItem={({ item }) => (
+                    <TouchableOpacity onPress={() => changeLanguage(item.code)}>
+                        <Text style={styles.languageText}>{item.locale}</Text>
+                    </TouchableOpacity>
+                )}
+            />
         </View>
-
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 16,
+    },
+    languageText: {
+        fontSize: 18,
+        marginBottom: 12,
+    },
+});

@@ -49,7 +49,7 @@ export function MainScreen() {
 
     return (
         <View style={styles.container}>
-            <Button title='settings' onPress={() => navigate('Settings')} />
+            <Button title={t('listTab')} onPress={() => navigate('Settings')} />
             <Filters selectedCategories={selectedCategories} setSelectedCategories={setSelectedCategories} submit={filter} />
             <TabView
                 tabBarPosition='bottom'
