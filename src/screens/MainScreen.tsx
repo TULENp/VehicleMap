@@ -1,15 +1,20 @@
-import { View, StyleSheet, useWindowDimensions } from 'react-native'
+import { View, StyleSheet, Text, useWindowDimensions, Button } from 'react-native'
 import React, { useState } from 'react'
-import { TRoute, TVehicle } from '../types';
+import { TAppNavigation, TRoute, TVehicle } from '../types';
 import vehicles from '../data/Vehicles.json'; // array of vehicles
 import { VehicleMap } from '../components/VehicleMap';
 import { VehicleList } from '../components/VehicleList';
 import { TabView } from 'react-native-tab-view';
 import { Filters } from '../components/Filters';
 import { setCategory } from '../services';
+import { useTranslation } from "react-i18next";
+import { useNavigation, NavigationProp } from '@react-navigation/native';
 
 //* display vehicles map and list
 export function MainScreen() {
+    const { navigate } = useNavigation<NavigationProp<TAppNavigation>>();
+
+    const { t } = useTranslation(); // translation hook
 
     const [vehiclesArray, setVehiclesArray] = useState<TVehicle[]>(vehicles); // array of vehicles
     const [selectedCategories, setSelectedCategories] = useState<number[]>([0, 1, 2]); // categories selected in the filter
@@ -17,7 +22,7 @@ export function MainScreen() {
     // filter vehiclesArray by selected categories
     function filter() {
         const categories: string[] = selectedCategories.map(id => setCategory(id)); // convert numbers to strings
-        const veh = vehicles.filter((item: TVehicle) => categories.includes(item.category)); 
+        const veh = vehicles.filter((item: TVehicle) => categories.includes(item.category));
         setVehiclesArray(veh);
     }
 
@@ -26,8 +31,8 @@ export function MainScreen() {
     const [index, setIndex] = useState(0); // selected tab index
     // tab routes
     const [routes] = useState<TRoute[]>([
-        { key: 'list', title: 'List' },
-        { key: 'map', title: 'Map' },
+        { key: 'list', title: t('listTab') },
+        { key: 'map', title: t('mapTab') },
     ]);
 
     //scene for tabs
@@ -44,6 +49,7 @@ export function MainScreen() {
 
     return (
         <View style={styles.container}>
+            <Button title='settings' onPress={() => navigate('Settings')} />
             <Filters selectedCategories={selectedCategories} setSelectedCategories={setSelectedCategories} submit={filter} />
             <TabView
                 tabBarPosition='bottom'
