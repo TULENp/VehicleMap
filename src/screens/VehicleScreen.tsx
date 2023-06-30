@@ -6,14 +6,17 @@ import { TAppNavigation, TVehicle } from '../types';
 import MapView, { Marker } from 'react-native-maps';
 import { globalStyles } from '../styles';
 import { setCategoryColor } from '../services';
+import { useTranslation } from 'react-i18next';
 
 //* displays map, vehicle data, buttons: 'call' and 'chat' 
 export function VehicleScreen() {
+    const { t } = useTranslation(); // translation hook
     const { setOptions } = useNavigation<NavigationProp<TAppNavigation>>();
-
     const { id, category, driver, location } = useRoute<RouteProp<TAppNavigation, 'Vehicle'>>().params.vehicle; // get vehicle from params
-    setOptions({ title: 'TC #' + id });
-    const text = 'Добрый день, подскажите пожалуйста, какой номер заказа у вас сейчас в работе';
+    setOptions({ title: t('vehicleHeader') + id }); // set nav header
+
+    //text template for chat message
+    const chatText = 'Добрый день, подскажите пожалуйста, какой номер заказа у вас сейчас в работе';
     const markerLocation = {
         latitude: location.latitude,
         longitude: location.longitude,
@@ -24,7 +27,7 @@ export function VehicleScreen() {
     // My number is used everywhere here so you don't forget to invite me :) 
     //(And because with random numbers it would not be possible to test the chat function in Whatsapp)
     const openCallApp = () => Linking.openURL(`tel:${driver.number}`);
-    const openWhatsApp = () => Linking.openURL(`http://api.whatsapp.com/send?phone=${driver.number}&text=${text}`);
+    const openWhatsApp = () => Linking.openURL(`http://api.whatsapp.com/send?phone=${driver.number}&text=${chatText}`);
 
 
     return (

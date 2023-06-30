@@ -1,4 +1,15 @@
 {
     "listTab": "Список",
-    "mapTab": "Карта"
+    "mapTab": "Карта",
+    "vehicle": "Транспортное средство",
+    "mainHeader": "Отслеживание ТС",
+    "settingsHeader": "Настройки",
+    "vehicleHeader": "ТС #",
+    "filters": "Фильтры",
+    "submit": "Применить",
+    "call": "Позвонить",
+    "chat": "Написать",
+    "freight": "Грузовой",
+    "passenger": "Пассажирский",
+    "special": "Спецтранспорт"
 }

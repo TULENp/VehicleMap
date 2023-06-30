@@ -1,6 +1,7 @@
 import { View, Text, Button } from 'react-native'
 import React, { SetStateAction, useState } from 'react'
 import { ButtonGroup } from '@rneui/themed';
+import { useTranslation } from 'react-i18next';
 
 type FiltersProps = {
     selectedCategories: number[],
@@ -10,11 +11,13 @@ type FiltersProps = {
 
 export function Filters({ selectedCategories, setSelectedCategories, submit }: FiltersProps) {
     //TODO add markers icon
+    const { t } = useTranslation(); // translation hook
+
     return (
         <View>
-            <Text>Фильтры</Text>
+            <Text>{t('filters')}</Text>
             <ButtonGroup
-                buttons={['Грузовой', 'Пассажирский', 'Спецтранспорт']}
+                buttons={[t('freight'), t('passenger'), t('special')]}
                 selectMultiple
                 selectedIndexes={selectedCategories}
                 onPress={(value) => {
@@ -22,7 +25,7 @@ export function Filters({ selectedCategories, setSelectedCategories, submit }: F
                 }}
                 containerStyle={{ marginBottom: 20 }}
             />
-            <Button title='Применить' onPress={submit} />
+            <Button title={t('submit')} onPress={submit} />
         </View>
     )
 }

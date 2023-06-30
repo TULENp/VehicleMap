@@ -1,4 +1,15 @@
 {
     "listTab": "List",
-    "mapTab": "Map"
+    "mapTab": "Map",
+    "vehicle": "Vehicle",
+    "mainHeader": "Vehicle Tracking",
+    "settingsHeader": "Settings",
+    "vehicleHeader": "Vehicle #",
+    "filters": "filters",
+    "submit": "submit",
+    "call": "call",
+    "chat": "chat",
+    "freight":"freight",
+    "passenger":"passenger",
+    "special": "special"
 }

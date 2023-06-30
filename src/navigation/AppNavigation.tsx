@@ -6,16 +6,19 @@ import { MainScreen } from '../screens/MainScreen';
 import { TAppNavigation } from '../types';
 import { VehicleScreen } from '../screens/VehicleScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
+import { useTranslation } from 'react-i18next';
 
 const Stack = createNativeStackNavigator<TAppNavigation>();
 
 export function AppNavigation() {
+    const { t } = useTranslation(); // translation hook
+
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name='Main' component={MainScreen} />
-                <Stack.Screen name='Vehicle' component={VehicleScreen} options={{ title: 'ТС' }} />
-                <Stack.Screen name='Settings' component={SettingsScreen} />
+            <Stack.Navigator >
+                <Stack.Screen name='Main' component={MainScreen} options={{ title: t('mainHeader') }} />
+                <Stack.Screen name='Vehicle' component={VehicleScreen} options={{ title: t('vehicleHeader') }} />
+                <Stack.Screen name='Settings' component={SettingsScreen} options={{ title: t('settingsHeader') }} />
             </Stack.Navigator>
         </NavigationContainer>
     )
