@@ -1,20 +1,31 @@
-import { View, StyleSheet, Text, useWindowDimensions, Button } from 'react-native'
-import React, { useState } from 'react'
+import { View, StyleSheet, Text, useWindowDimensions, Button, StatusBar, Pressable } from 'react-native'
+import React, { useEffect, useState } from 'react'
 import { TAppNavigation, TRoute, TVehicle } from '../types';
 import vehicles from '../data/Vehicles.json'; // array of vehicles
 import { VehicleMap } from '../components/VehicleMap';
 import { VehicleList } from '../components/VehicleList';
-import { TabView } from 'react-native-tab-view';
+import { TabBar, TabView } from 'react-native-tab-view';
 import { Filters } from '../components/Filters';
 import { setCategory } from '../services';
 import { useTranslation } from "react-i18next";
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { globalStyles } from '../styles';
+import { accent, primary, primaryButton } from '../constants/colors';
 
 //* display vehicles map, list and filters
 export function MainScreen() {
-    const { navigate } = useNavigation<NavigationProp<TAppNavigation>>();
     const { t } = useTranslation(); // translation hook
+    const { setOptions, navigate } = useNavigation<NavigationProp<TAppNavigation>>();
+    useEffect(() => {
+        //add "Settings" button to header
+        setOptions({
+            headerRight: () => (
+                <Pressable style={[globalStyles.button, { width: 'auto', padding: 5, margin: 'auto' }]} onPress={() => navigate('Settings')} >
+                    <Text style={globalStyles.button_text}>{t('settingsHeader')}</Text>
+                </Pressable>
+            )
+        });
+    }, [])
 
     const [vehiclesArray, setVehiclesArray] = useState<TVehicle[]>(vehicles); // array of vehicles
     const [selectedCategories, setSelectedCategories] = useState<number[]>([0, 1, 2]); // categories selected in the filter
@@ -48,7 +59,6 @@ export function MainScreen() {
 
     return (
         <View style={globalStyles.container}>
-            {/* <Button title={t('settingsHeader')} onPress={() => navigate('Settings')} /> */}
             <Filters selectedCategories={selectedCategories} setSelectedCategories={setSelectedCategories} submit={filter} />
             <TabView
                 tabBarPosition='bottom'
@@ -56,6 +66,7 @@ export function MainScreen() {
                 renderScene={renderScene}
                 onIndexChange={setIndex}
                 initialLayout={{ width: width }}
+                renderTabBar={props => <TabBar {...props} style={{ backgroundColor: primaryButton }} indicatorStyle={{ backgroundColor: 'white' }} />}
             />
         </View>
     )
@@ -65,9 +76,12 @@ export function MainScreen() {
 const styles = StyleSheet.create({
     container: {
         display: 'flex',
-        flex: 1,
+        // flex: 1,
+        flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 10
+        padding: 10,
+        alignItems: 'center',
+        height: 70,
     },
     listContainer: {
         marginBottom: 10

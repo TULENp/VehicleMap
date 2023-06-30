@@ -12,5 +12,9 @@
     "freight":"Freight",
     "passenger":"Passenger",
     "special": "Special",
-    "emptyList": "List is empty"
+    "emptyList": "List is empty",
+    "category": "Category",
+    "driverName": "Name",
+    "driverNumber": "Number"
+    
 }

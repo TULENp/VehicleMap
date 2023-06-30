@@ -20,7 +20,7 @@ export function VehicleCard({ vehicle }: { vehicle: TVehicle }) {
 
 const styles = StyleSheet.create({
     container: {
-        marginBottom: 10,
+        marginBottom: 8,
         padding: 10,
         backgroundColor: secondaryButton,
         display: 'flex',

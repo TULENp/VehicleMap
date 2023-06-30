@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { secondary } from "./constants/colors";
+import { primaryButton, secondary } from "./constants/colors";
 
 
 export const globalStyles = StyleSheet.create({
@@ -8,5 +8,17 @@ export const globalStyles = StyleSheet.create({
         display: 'flex',
         flex: 1,
         justifyContent: 'space-between',
-    }
+    },
+    button: {
+        backgroundColor: primaryButton,
+        width: 350,
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+    },
+    button_text: {
+        fontSize: 18,
+        color: 'white'
+    },
 })

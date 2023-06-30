@@ -4,6 +4,7 @@ import { ButtonGroup } from '@rneui/themed';
 import { useTranslation } from 'react-i18next';
 import { Marker } from 'react-native-maps';
 import { accent, freightColor, passengerColor, primary, primaryButton, secondaryButton, specialColor } from '../constants/colors';
+import { globalStyles } from '../styles';
 
 type FiltersProps = {
     selectedCategories: number[],
@@ -27,9 +28,11 @@ export function Filters({ selectedCategories, setSelectedCategories, submit }: F
     };
     return (
         <View style={styles.container}>
-            <Text>{t('filters')}</Text>
+            <Text style={{ fontSize: 20 }}>{t('filters')}</Text>
             <ButtonGroup
                 buttons={[t('freight'), t('passenger'), t('special')]}
+                textStyle={{ fontWeight: 'bold' }}
+                selectedButtonStyle={{ backgroundColor: primaryButton }}
                 selectMultiple
                 selectedIndexes={selectedCategories}
                 onPress={(value) => {
@@ -37,7 +40,9 @@ export function Filters({ selectedCategories, setSelectedCategories, submit }: F
                 }}
                 containerStyle={{ marginBottom: 10 }}
             />
-            <Button title={t('submit')} onPress={submit} />
+            <Pressable style={globalStyles.button} onPress={submit}>
+                <Text style={globalStyles.button_text}>{t('submit')}</Text>
+            </Pressable>
         </View>
     )
 }
@@ -46,7 +51,7 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         alignItems: 'center',
-        marginBottom:10
+        marginBottom: 10
 
     },
     circle: {
@@ -72,7 +77,6 @@ const styles = StyleSheet.create({
         marginBottom: 15
     },
     buttons_text: {
-        fontFamily: 'MontserratAlt700',
         fontSize: 18,
         color: 'white'
     },
